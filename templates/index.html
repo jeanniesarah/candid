@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<section class=container style="align-items: center;">
+    <img src="/static/assets/chat.gif" frameborder="0" allowfullscreen>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 class="title is-3">Create a new channel or join an existing one</h3>
+    <form action="/create" method="post">
+        <div class="field">
+            <p class="control has-icons-left">
+                <input class="input is-warning" type="text" id="username" name="channel" id="channel"
+                    placeholder="Channel name">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-comment-dots"></i>
+                </span>
+            </p>
+        </div>
+        <div class="field">
+            <p class="control">
+                <button class="button is-black is-medium is-fullwidth" type="submit">Submit</button>
+            </p>
+        </div>
+    </form>
+</section>
+<script>
+    if (localStorage.getItem('last_channel')) {
+        // Redirect to last channel
+        let channel = localStorage.getItem('last_channel');
+        window.location.replace('/channels/' + channel);
+    }
+</script>
+{% endblock %}

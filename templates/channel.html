@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<script src="../static/channel.js"></script>
+{% endblock %}
+
+{% block title %}
+{{ session.current_channel }}
+{% endblock %}
+
+{% block content %}
+<div>
+    <h1 class="title" style="margin-bottom: 1rem">
+        <span class="badge badge-dark">
+            {{ session.current_channel }}
+        </span>
+    </h1>
+
+</div>
+<div class="container-channel custom-window">
+    <div id="chat-box" class="list-group">
+        <textarea id="chat" cols="30" rows="20" readonly>
+            {%- if messages -%} 
+                {%- for message in messages -%}
+                <{{ message[0] }}> - [{{ message[1] }}]: {{ message [2] }} {{'\n'}}
+                {%- endfor -%}
+                {{ '- Older messages -' }}{{- '\n' -}}
+            {%- endif -%}
+        </textarea>
+    </div>
+    <div class="field">
+        <div class="control">
+            <input class="textarea is-warning" id="comment" placeholder="Say something sweet"></input>
+        </div>
+    </div>
+
+    <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-black" id="send-button" type="reset">Send</button>
+        </div>
+        <div class="file has-name">
+            <label class="file-label">
+                <input class="file-input" type="file" name="resume">
+                <span class="file-cta">
+                    <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">
+                        Upload file
+                    </span>
+                </span>
+                <span class="file-name">
+                    File name
+                </span>
+            </label>
+        </div>
+        <div class="control">
+            <button class="button is-text" id="leave" type="button">Leave channel</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

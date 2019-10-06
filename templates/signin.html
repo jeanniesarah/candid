@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+sign in
+{% endblock %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+<section class=container style="align-items: center;">
+  <img src="/static/assets/giphy.webp" frameborder="0" allowfullscreen>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <h3 class="title is-3">Choose an alter ego to join the chat</h3>
+  <form action="/signin" method="POST">
+    <div class="field">
+      <p class="control has-icons-left">
+        <input class="input is-warning" type="text" id="username" name="username" placeholder="">
+        <span class="icon is-small is-left">
+          <i class="fas fa-user-secret"></i>
+        </span>
+        <p class="help">Your alter ego will be used to identify you on the chat</p>
+      </p>
+    </div>
+    <div class="field">
+      <p class="control">
+        <button class="button is-black is-medium is-fullwidth" type="submit">Start chatting!</button>
+      </p>
+    </div>
+  </form>
+</section>
+{% endblock %}
