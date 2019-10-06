@@ -1,12 +1,12 @@
 <h4 align="center">
-  <img alt="project 1" src="logo2.png">
+  <img alt="project 1" src="candid.png">
 </h4>
 
 ***Be candid***
 
 ---
 
-## Project 2: Chat App
+## Chat App Submission For Harvard CS50W
 
 *Objectives*
 
@@ -21,7 +21,7 @@ Here's what I used to create Candid:
 - [`Socket.io`](https://socket.io)
 - [`Bulma Framework`](https://bulma.io/)
 
- <img alt="project 1" src="candid.png">
+ <img alt="project 1" src="logo2.png">
 
 ## Usage
 
